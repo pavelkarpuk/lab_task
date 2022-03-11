@@ -9,9 +9,10 @@ public class B {
         A a;
         try {
             Class<?> clazz = Class.forName(A.class.getName());
-            a = (A) clazz.newInstance();
+            a = (A) clazz.getConstructor().newInstance();
 
-            Method method = A.class.getMethod("printText", String.class);
+            Method method = A.class.getDeclaredMethod("printText", String.class);
+            method.setAccessible(true);
             method.invoke(a, "Hello");
         } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException | ClassNotFoundException | InstantiationException e) {
             e.printStackTrace();
