@@ -2,8 +2,8 @@ public class FibonacciNumbers {
 
     public static void main(String[] args) {
         StringBuilder numbers = new StringBuilder();
-        int count = 5;
-        for (int i = 1; i <= count; i++) {
+        int count = 10;
+        for (int i = 0; i < count; i++) {
             numbers.append(fibonacci(i)).append(", ");
         }
         numbers.deleteCharAt(numbers.length() - 2);
